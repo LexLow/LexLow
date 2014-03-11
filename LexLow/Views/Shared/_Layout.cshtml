@@ -1,0 +1,76 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - LexLow.ru</title>
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Scripts.Render("~/Content/js/modernizr-2.6.2.js")
+</head>
+<body>
+    <div> 
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand" >
+                    <span class="glyphicon glyphicon glyphicon-th"></span>
+                    <span> LexLow.ru</span>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li>
+                        <a href="javascript:void(0)"> 
+                           Contact
+                        </a>
+                    </li>
+                </ul>
+                
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"> 
+                                        <i class="glyphicon glyphicon-log-in"></i>
+                                        <span style="margin-left:10px;">Sign In</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-envelope"></i>
+                                        <span style="margin-left:10px;">Forgot Password</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-th-list"></i>
+                                        <span style="margin-left:10px; color: white;"><strong>Sign Up</strong></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+</div>
+        </div>
+
+        @RenderBody()
+    </div>
+    
+    @Scripts.Render("~/Content/js/jquery-1.10.2.js")
+    @Scripts.Render("~/Content/js/jquery.validate.js")
+    @Scripts.Render("~/Content/js/bootstrap.js")
+    @Scripts.Render("~/Content/js/respond.js")
+
+</body>
+</html>
