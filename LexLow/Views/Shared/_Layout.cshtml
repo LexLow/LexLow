@@ -10,7 +10,7 @@
 </head>
 <body>
     <div> 
-        <div class="navbar navbar-default">
+        <div class="navbar navbar-default navbar-fixed-top" id="navbar_main">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <span class="icon-bar"></span>
@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand" >
-                    <span class="glyphicon glyphicon glyphicon-th"></span>
+                    <span style="color:yellowgreen;" class="glyphicon glyphicon glyphicon-th"></span>
                     <span> LexLow.ru</span>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"><b class="caret"></b></a>
+                            <a href="javascript:void(0)" style="color:yellowgreen;" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="#"> 
@@ -55,15 +55,33 @@
                                 <li>
                                     <a href="#">
                                         <i class="glyphicon glyphicon-th-list"></i>
-                                        <span style="margin-left:10px; color: white;"><strong>Sign Up</strong></span>
+                                        <span style="margin-left:10px;">Sign Up</span>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" style="margin-right:10px">
+                            <a href="javascript:void(0)" style="color:yellowgreen;" class="dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li onclick="NavbarLoc()">
+                                    <a href="javascript:void(0)">
+                                        <i class="glyphicon glyphicon-saved" id="icon_navbar_lock"></i>
+                                        <span style="margin-left:10px;">Lock Top Navbar</span>
+                                    </a>
+                                </li>
+                                @*<li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-th-list"></i>
+                                        <span style="margin-left:10px;">Sign Up</span>
+                                    </a>
+                                </li>*@
                             </ul>
                         </li>
                     </ul>
 </div>
         </div>
-
+        <br /><br />
         @RenderBody()
     </div>
     
@@ -71,6 +89,7 @@
     @Scripts.Render("~/Content/js/jquery.validate.js")
     @Scripts.Render("~/Content/js/bootstrap.js")
     @Scripts.Render("~/Content/js/respond.js")
+    @Scripts.Render("~/Content/js/site.js")
 
 </body>
 </html>
