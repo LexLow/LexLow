@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - LexLow.ru</title>
-    @Styles.Render("~/Content/css/bootstrap.css")
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css" id="link_style">
     @Scripts.Render("~/Content/js/modernizr-2.6.2.js")
 </head>
 <body>
@@ -24,13 +24,14 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li>
+                    @*<li><a href="javascript:void(0)">About</a></li>
+                    <li><a href="javascript:void(0)">Blog</a></li>*@
+                    <li><a href="/Blog/RTE">WYSIWYG</a></li>
+                    @*<li>
                         <a href="javascript:void(0)"> 
                            Contact
                         </a>
-                    </li>
+                    </li>*@
                 </ul>
                 
                     <ul class="nav navbar-nav navbar-right">
@@ -69,20 +70,40 @@
                                         <span style="margin-left:10px;">Lock Top Navbar</span>
                                     </a>
                                 </li>
-                                @*<li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-th-list"></i>
-                                        <span style="margin-left:10px;">Sign Up</span>
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0)" onclick="ChangeTheme('Content/css/bootstrap.css','icon_theme_deffault')">
+                                        <i class="glyphicon glyphicon-arrow-right" id="icon_theme_deffault"></i>
+                                          Deffault Theme
                                     </a>
-                                </li>*@
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="ChangeTheme('Content/css/bootstrap_light.css','icon_theme_light')">
+                                        <i class="" id="icon_theme_light"></i>
+                                        Light Theme
+                                    </a>
+                                </li>
+                                <li>
+                                <a href="javascript:void(0)" onclick="ChangeTheme('Content/css/bootstrap_cerulean.css','icon_theme_blue')">
+                                    <i class="" id="icon_theme_blue"></i>
+                                    Blue Theme
+                                </a>
+                                </li>
+                                
                             </ul>
                         </li>
                     </ul>
 </div>
         </div>
-        <br /><br />
-        @RenderBody()
+
+       <div id="div_top_indent" style="height:45px;">
+       </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+            <div class="col-md-1"></div>
+        </div>
     </div>
     
     @Scripts.Render("~/Content/js/jquery-1.10.2.js")
@@ -91,5 +112,8 @@
     @Scripts.Render("~/Content/js/respond.js")
     @Scripts.Render("~/Content/js/site.js")
 
+   
+
+    
 </body>
 </html>
